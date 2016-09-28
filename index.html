@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Product Application</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.js"></script>
+	<script src="productApp.js"></script>
+	<script src="productService.js"></script>
+	<script src="productController.js"></script>
+	
+	<link href="styles.css" rel="stylesheet"/>
+	</head>
+	
+	<body ng-app="productApp" id="productBody">
+		<div ng-controller="ProductController">
+			<div class="searchContainer">
+				<h2>Product List</h2>
+				<input type="text" ng-model="searchText" placeholder="Search"/>
+				<button type="submit" ng-click="fetchProducts()">SEARCH</button>
+			</div>
+			<div ng-if="productList.length > 0">
+				<product-list></product-list>
+			</div>
+		</div>
+	</body>
+</html>

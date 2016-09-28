@@ -1,0 +1,66 @@
+html, body{
+	font-family: 'Helvetica';
+}
+
+.productGrid li{
+	list-style-type: none;
+}
+
+.productClass{
+	width: 95%;
+	padding: 10px;
+	border-bottom: 1px solid grey;
+}
+
+.contentClass{
+	width: 50%;
+}
+
+.productIcon{
+	width: 10%;
+	float: left;
+	padding: 10px;
+	height: 120px;
+}
+
+.categoryClass{
+	font-weight: bold;
+	font-size: 15px;
+	display: block;
+}
+
+.searchContainer{
+	padding: 20px;
+	text-align: center;
+}
+
+.searchContainer input{
+	line-height: 25px;
+	width: 50%;
+	border-radius: 5px;
+	font-size: 12px;
+	border: 1px solid grey;
+	margin: 10px;
+	padding-left: 10px;
+}
+
+.loadingClass{
+	text-align: center;
+	color: #2b76dc;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.searchContainer button{
+	line-height: 20px;
+	color: white;
+	border: 1px solid #33acff;
+	background-color: #33acff;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.searchContainer button:hover{
+	background-color: #2b94dc;
+	cursor: pointer;
+}

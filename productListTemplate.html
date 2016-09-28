@@ -1,0 +1,15 @@
+<ul>
+	<li ng-repeat = "product in productSubList" ng-class="productGrid" ng-if="productSubList">
+		<div ng-class="productClass">
+			<div ng-class = "productIcon">
+				<img src="product.img"/>
+			</div>
+			<div ng-class ="contentClass" ng-click="displayDetail(product.id)">
+				<label>{{ product.name}}</label>
+				<span ng-class="categoryClass">{{product.cat}}</span>
+				<div ng-class="priceClass">{{ product.price | currency }}</div>
+				<span ng-class="scoreClass">{{product.score}}</span>
+			</div>
+		</div>
+	</li>
+</ul>
