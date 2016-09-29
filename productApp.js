@@ -14,7 +14,7 @@ productApp.directive("productList", function($document, $window){
 					'<div class = "productIcon">' +
 					'<img src="product.img"/>' +
 					'</div>' +
-					'<div class ="contentClass" ng-click="displayDetail(product.id)">' +
+					'<div class ="contentClass">' +
 					'<label><h2>{{ product.name }}</h2></label>' +
 					'<span class="categoryClass">{{product.cat}}</span>' +
 					'<div class="priceClass">{{ product.price | currency }}</div>' +
@@ -26,7 +26,6 @@ productApp.directive("productList", function($document, $window){
 			$document.bind('scroll', function () {
 				if($(document).height() - $(window).height() == $(window).scrollTop())
 				{
-					scope.loadItems = true;
 					document.getElementById("showMeLink").click();
 				}
 			});

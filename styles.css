@@ -9,7 +9,8 @@ html, body{
 .productClass{
 	width: 95%;
 	padding: 10px;
-	border-bottom: 1px solid grey;
+	border-bottom: 5px solid #FFFFFF;
+	background-color:#58B9C7;
 }
 
 .contentClass{
@@ -29,21 +30,6 @@ html, body{
 	display: block;
 }
 
-.searchContainer{
-	padding: 20px;
-	text-align: center;
-}
-
-.searchContainer input{
-	line-height: 25px;
-	width: 50%;
-	border-radius: 5px;
-	font-size: 12px;
-	border: 1px solid grey;
-	margin: 10px;
-	padding-left: 10px;
-}
-
 .loadingClass{
 	text-align: center;
 	color: #2b76dc;
@@ -51,16 +37,51 @@ html, body{
 	font-weight: bold;
 }
 
-.searchContainer button{
-	line-height: 20px;
-	color: white;
-	border: 1px solid #33acff;
-	background-color: #33acff;
-	border-radius: 5px;
-	padding: 5px;
+.searchContainer{
+	text-align: center;
 }
 
-.searchContainer button:hover{
-	background-color: #2b94dc;
+.searchContainer h2{
+	width: 100%;
+	background-color: #0B4C5F;
+	padding: 10px;
+	color: #ffffff;
+	width: 98%;
+}
+
+.categoryFilter li{
+	list-style-type : none;
+	display: inline;
+	padding: 10px;
+}
+
+.categoryDropdown{
+	height: 48px;
+	width: 150px;
+}
+
+.optionClass{
 	cursor: pointer;
+	position: relative;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: auto;
+	padding: 0 16px;
+	height: 48px;
+	font-size: 15px;
+}
+
+.optionClass:hover{
+	background-color: #58D3F7;
+}
+
+@media only screen and (max-width: 768px) {
+	.categoryFilter li{
+		display: block;
+		padding: 10px;
+	}
 }
