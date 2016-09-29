@@ -17,7 +17,7 @@
 		<div ng-controller="ProductController" ng-cloak>
 			<div class="searchContainer">
 				<h2>Product List</h2>
-				<select ng-model="filterCategories" class="categoryDropdown" >
+				<select ng-model="filterCategories" class="categoryDropdown" ng-change="addMoreItems()">
 					<option ng-repeat="category in categories" class="optionClass">{{ category }}</option>
 				</select>
 			</div>

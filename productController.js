@@ -4,10 +4,6 @@ productApp.controller('ProductController', ['$scope', 'ProductService', function
 	$scope.categories = ['', 'jeans', 'sarees', 'tops', 'pants', 'tshirts'];
 	$scope.filterCategories = "";
 	
-	$scope.watch("filterCategories", function(newValue, oldValue){
-		$scope.addMoreItems();
-	});
-	
 	$scope.fetchProducts = function(){
 		ProductService.fetchAllProducts()
 			.then(
@@ -35,12 +31,7 @@ productApp.controller('ProductController', ['$scope', 'ProductService', function
 		
 		for(var i =$scope.index;i< ($scope.index + 9); i++){
 			if($scope.index <= $scope.productList.length){
-				if($scope.filterCategories != '' && $scope.filterCategories == $scope.productList[i].cat){
-					$scope.productSubList.push($scope.productList[i]);
-				}
-				else if($scope.filterCategories == ''){
-					$scope.productSubList.push($scope.productList[i]);
-				}
+				$scope.productSubList.push($scope.productList[i]);
 			}
 			else{
 				return;

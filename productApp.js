@@ -9,7 +9,7 @@ productApp.directive("productList", function($document, $window){
 	return{
 		restrict: 'E',
 		transclude : true,
-		template: '<ul class="productGrid"><li ng-repeat = "product in productSubList">' + 
+		template: '<ul class="productGrid"><li ng-repeat = "product in productSubList | filter:filterCategories ">' + 
 					'<div class="productClass">' +
 					'<div class = "productIcon">' +
 					'<img src="product.img"/>' +
