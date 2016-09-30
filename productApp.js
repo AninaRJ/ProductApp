@@ -9,19 +9,21 @@ productApp.directive("productList", function($document, $window){
 	return{
 		restrict: 'E',
 		transclude : true,
-		template: '<ul class="productGrid"><li ng-repeat = "product in productSubList | filter:filterCategories ">' + 
+		template: 	'<div class="resultCounter">Displaying {{index}} of {{productList.length}} results</div>' + 
+					'<ul class="productGrid"><li ng-repeat = "product in productSubList | orderBy: sortFieldSelection" class="productGridElement">' + 
 					'<div class="productClass">' +
 					'<div class = "productIcon">' +
 					'<img src="product.img"/>' +
 					'</div>' +
 					'<div class ="contentClass">' +
-					'<label><h2>{{ product.name }}</h2></label>' +
+					'<label class="productLabel"><h2>{{ product.name }}</h2></label>' +
 					'<span class="categoryClass">{{product.cat}}</span>' +
 					'<div class="priceClass">{{ product.price | currency }}</div>' +
-					'<span class="scoreClass">{{product.score}}</span><br/>' +
-					'</div></div></li></ul>' +
-					'<div ng-if="index<productList.length" class="loadingClass">Loading...</div>' +
-					'<a href="" id="showMeLink" ng-hide="true" ng-click="addMoreItems()">Show me more...</a>',
+					'<div class="scoreClass">{{product.score | number: 4}}</div>' +
+					'</div>' + 
+					'</div></li></ul>' +
+					'<div ng-if="moreItemsPresent()" ng-cloak class="loadingClass">Loading...</div>' +
+					'<a href="" id="showMeLink"  ng-hide="true" ng-click="addMoreItems()">Show me more...</a>',
 		link: function(scope, elem, attrs){
 			$document.bind('scroll', function () {
 				if($(document).height() - $(window).height() == $(window).scrollTop())

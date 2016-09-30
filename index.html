@@ -17,9 +17,18 @@
 		<div ng-controller="ProductController" ng-cloak>
 			<div class="searchContainer">
 				<h2>Product List</h2>
-				<select ng-model="filterCategories" class="categoryDropdown" ng-change="addMoreItems()">
+				<label><h3>Categories</h3></label>
+				<ul class="categoryCB">
+					<li ng-repeat="category in categories"><a href="" ng-model="filterFields" ng-click="toggleCategories(category)">{{category}}</a></li>
+				</ul>
+				<!-- <select ng-model="filterCategories" class="categoryDropdown">
 					<option ng-repeat="category in categories" class="optionClass">{{ category }}</option>
-				</select>
+				</select> -->
+				<div>
+					<ul class="sortList">
+						<li ng-repeat="sortField in sortFields"><a href="" ng-model="sortFields" ng-click="setSortSelection(sortField.value)">{{sortField.displayText}}</a></li>
+					</ul>
+				</div>
 			</div>
 			<div ng-if="productList.length > 0">
 				<product-list></product-list>
