@@ -147,4 +147,16 @@ html, body{
 	.scoreClass{
 		overflow-x: inline;
 	}
+	
+	.categoryCB li{
+		display: block;
+		padding-left: 0px;
+		padding-bottom: 10px;
+		text-align: justify;
+	}
+	
+	.categoryCB{
+		height: auto;
+	}
+	
 }
