@@ -2,7 +2,7 @@
 
 productApp.controller('ProductController', ['$scope', '$filter', 'ProductService', function($scope, $filter, ProductService){
 	$scope.categories = ['jeans', 'sarees', 'tops', 'pants', 'tshirts'];
-	$scope.filterCategories = "";
+	self.filterCategories = "";
 	$scope.sortFields = [{
 		value: 'price',
 		displayText: 'Sort by Price'
@@ -16,16 +16,16 @@ productApp.controller('ProductController', ['$scope', '$filter', 'ProductService
 	}
 	
 	$scope.toggleCategories = function(category){
-		if($scope.filterCategories.contains(category)){
-			$scope.filterCategories = $scope.filterCategories.split(category)[0].trim() + " " + $scope.filterCategories.split(category)[1].trim();
+		if(self.filterCategories != "" && self.filterCategories.indexOf(category) != -1){
+			self.filterCategories = self.filterCategories.split(category)[0].trim() + " " + self.filterCategories.split(category)[1].trim();
 		}
 		else{
-			$scope.filterCategories += " " + category;
+			self.filterCategories += " " + category;
 		}
 	}
 	
 	$scope.categoryFilter = function(product){
-		return ($scope.filterCategories.trim() != ""? $scope.filterCategories.contains(product.cat): true);
+		return (self.filterCategories.trim() != ""? self.filterCategories.indexOf(product.cat) != -1 : true);
 	}
 	
 	$scope.fetchProducts = function(){

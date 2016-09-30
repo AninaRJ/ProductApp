@@ -11,16 +11,16 @@ productApp.directive("productList", function($document, $window){
 		transclude : true,
 		template: 	'<ul class="productGrid"><li ng-repeat = "product in productList | filter:categoryFilter | orderBy: sortFieldSelection | limitTo:index" ' +
 					'class="productGridElement">' + 
-					'<div class="productClass">' +
-					'<div class = "productIcon">' +
-					'<img src="product.img"/>' +
-					'</div>' +
-					'<div class ="contentClass">' +
-					'<label class="productLabel"><h2>{{ product.name }}</h2></label>' +
-					'<span class="categoryClass">{{product.cat}}</span>' +
-					'<div class="priceClass">{{ product.price | currency }}</div>' +
-					'<div class="scoreClass">{{product.score | number: 4}}</div>' +
-					'</div>' + 
+						'<div class="productClass">' +
+							'<div class = "productIcon">' +
+								'<img src="product.img"/>' +
+							'</div>' +
+						'<div class ="contentClass">' +
+							'<label class="productLabel"><h2>{{ product.name }}</h2></label>' +
+							'<span class="categoryClass">{{product.cat}}</span>' +
+							'<div class="priceClass">{{ product.price | currency }}</div>' +
+							'<div class="scoreClass">{{product.score | number: 4}}</div>' +
+						'</div>' + 
 					'</div></li></ul>',
 		link: function(scope, elem, attrs){
 			$document.bind('scroll', function () {
