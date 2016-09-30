@@ -9,8 +9,8 @@ productApp.directive("productList", function($document, $window){
 	return{
 		restrict: 'E',
 		transclude : true,
-		template: 	'<div class="resultCounter">Displaying {{index}} of {{productList.length}} results</div>' + 
-					'<ul class="productGrid"><li ng-repeat = "product in productSubList | orderBy: sortFieldSelection" class="productGridElement">' + 
+		template: 	'<ul class="productGrid"><li ng-repeat = "product in productList | filter:categoryFilter | orderBy: sortFieldSelection | limitTo:index" ' +
+					'class="productGridElement">' + 
 					'<div class="productClass">' +
 					'<div class = "productIcon">' +
 					'<img src="product.img"/>' +
@@ -21,14 +21,12 @@ productApp.directive("productList", function($document, $window){
 					'<div class="priceClass">{{ product.price | currency }}</div>' +
 					'<div class="scoreClass">{{product.score | number: 4}}</div>' +
 					'</div>' + 
-					'</div></li></ul>' +
-					'<div ng-if="moreItemsPresent()" ng-cloak class="loadingClass">Loading...</div>' +
-					'<a href="" id="showMeLink"  ng-hide="true" ng-click="addMoreItems()">Show me more...</a>',
+					'</div></li></ul>',
 		link: function(scope, elem, attrs){
 			$document.bind('scroll', function () {
 				if($(document).height() - $(window).height() == $(window).scrollTop())
 				{
-					document.getElementById("showMeLink").click();
+					scope.index += scope.productSize;
 				}
 			});
 		}

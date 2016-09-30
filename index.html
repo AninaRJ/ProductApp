@@ -19,11 +19,8 @@
 				<h2>Product List</h2>
 				<label><h3>Categories</h3></label>
 				<ul class="categoryCB">
-					<li ng-repeat="category in categories"><a href="" ng-model="filterFields" ng-click="toggleCategories(category)">{{category}}</a></li>
+					<li ng-repeat="category in categories"><input type="checkbox" ng-model="filterFields" ng-click="toggleCategories(category)">{{category}}</input></li>
 				</ul>
-				<!-- <select ng-model="filterCategories" class="categoryDropdown">
-					<option ng-repeat="category in categories" class="optionClass">{{ category }}</option>
-				</select> -->
 				<div>
 					<ul class="sortList">
 						<li ng-repeat="sortField in sortFields"><a href="" ng-model="sortFields" ng-click="setSortSelection(sortField.value)">{{sortField.displayText}}</a></li>
