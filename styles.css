@@ -33,7 +33,6 @@ html, body{
 }
 
 .contentClass{
-	width: 50%;
 	padding: 10px;
 }
 
@@ -129,6 +128,10 @@ html, body{
 }
 
 @media only screen and (max-width: 768px) {
+	.productClass{
+		padding: 0px;
+	}
+	
 	.categoryFilter li{
 		display: block;
 		padding: 10px;
@@ -164,4 +167,19 @@ html, body{
 		height: auto;
 	}
 	
+	.productIcon{
+		display: block;
+		width: 100%;
+		float: left;
+		height: auto;
+	}
+	
+	.productIcon img{
+		width: 100%;
+	}
+	
+	.productClass{
+		min-height: 200px;
+		height: auto;
+	}
 }
