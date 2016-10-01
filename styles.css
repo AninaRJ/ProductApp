@@ -180,6 +180,6 @@ html, body{
 	
 	.productClass{
 		min-height: 200px;
-		height: auto;
+		height: 250px;
 	}
 }
