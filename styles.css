@@ -44,6 +44,11 @@ html, body{
 	height: 40%;
 }
 
+.productIcon img{
+	width: 60%;
+	height: 80%;
+}
+
 .categoryClass{
 	font-weight: bold;
 	font-size: 15px;

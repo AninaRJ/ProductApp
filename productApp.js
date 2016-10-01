@@ -13,7 +13,7 @@ productApp.directive("productList", function($document, $window){
 					'class="productGridElement">' + 
 						'<div class="productClass">' +
 							'<div class = "productIcon">' +
-								'<img src="product.img"/>' +
+								'<img src="{{product.img}}"/>' +
 							'</div>' +
 						'<div class ="contentClass">' +
 							'<label class="productLabel"><h2>{{ product.name }}</h2></label>' +
