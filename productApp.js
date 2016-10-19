@@ -8,8 +8,7 @@ var productApp = angular.module("productApp", []);
 productApp.directive("productList", function($document, $window){
 	return{
 		restrict: 'E',
-		transclude : true,
-		template: 	'<ul class="productGrid"><li ng-repeat = "product in productList | filter:categoryFilter | orderBy: sortFieldSelection | limitTo:index" ' +
+		template: 	'{{index}}<ul class="productGrid"><li ng-repeat = "product in productList | filter:categoryFilter | orderBy: sortFieldSelection | limitTo:index" ' +
 					'class="productGridElement">' + 
 						'<div class="productClass">' +
 							'<div class = "productIcon">' +
@@ -26,7 +25,9 @@ productApp.directive("productList", function($document, $window){
 			$document.bind('scroll', function () {
 				if($(document).height() - $(window).height() == $(window).scrollTop())
 				{
-					scope.index += scope.productSize;
+					scope.$apply(function () {
+						scope.index = scope.index + 9;
+					});
 				}
 			});
 		}
