@@ -39,7 +39,8 @@ html, body{
 .productIcon{
 	float: right;
 	display: inline;
-	width: 40%;
+	width: 35%;
+	vertical-align: middle;
 	height: 40%;
 }
 
