@@ -8,7 +8,7 @@ var productApp = angular.module("productApp", []);
 productApp.directive("productList", function($document, $window){
 	return{
 		restrict: 'E',
-		template: 	'{{index}}<ul class="productGrid"><li ng-repeat = "product in productList | filter:categoryFilter | orderBy: sortFieldSelection | limitTo:index" ' +
+		template: 	'<ul class="productGrid"><li ng-repeat = "product in productList | filter:categoryFilter | orderBy: sortFieldSelection | limitTo:index" ' +
 					'class="productGridElement">' + 
 						'<div class="productClass">' +
 							'<div class = "productIcon">' +
